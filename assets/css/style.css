@@ -6,6 +6,22 @@
     background-color: #676767;
 }
 
+.ui-menu-color-home {
+    background-color: #222222;
+}
+
+.ui-menu-color-resume {
+    background-color: #686868;
+}
+
+.ui-menu-color-contact {
+    background-color: #343434;
+}
+
+.ui-menu-color-download {
+    background-color: #525356;
+}
+
 /*------------Heading*/
 header {
     margin:0;
@@ -41,4 +57,17 @@ header {
     margin-top: 20px;
     margin-bottom: 90px;
     color: #fff;
+}
+
+.list-inline-item:not(:last-child) {
+    margin: 0;
+}
+
+.menucontainer {
+    font-size: 0;
+}
+
+#nav li {
+    font-size: 14px;
+    padding: 0;
 }
