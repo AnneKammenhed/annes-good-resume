@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hover.css/2.1.1/css/hover-min.css" type="text/css" />
     <link rel="stylesheet" href="assets/css/style.css" type="text/css">
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="assets/js/github-information.js"></script>
     <title>Anne</title>
 </head>
 
@@ -33,13 +36,13 @@
                                 <a href="resume.html" class="hvr-sweep-to-bottom"><i class="fa fa-graduation-cap" aria-hidden="true"></i><span> Resume</span></a>
                             </li>
                             <li class="col-6 col-sm-3 list-inline-item ui-menu-color-contact menuitem">
-                                <a href="contact.html" class="hvr-sweep-to-bottom"><i class="fas fa-comment" aria-hidden="true"></i><span> Contact</span></a>
+                                <a href="#" class="hvr-sweep-to-bottom"><i class="fas fa-comment" aria-hidden="true"></i><span> Contact</span></a>
                             </li>
                             <li class="col-6 col-sm-3 list-inline-item ui-menu-color-interests menuitem">
                                 <a href="interests.html" class="hvr-sweep-to-bottom"><i class="fa fa-users" aria-hidden="true"></i><span>Interests</span></a>
                             </li>
                             <li class="col-6 col-sm-3 list-inline-item ui-menu-color-github menuitem">
-                                <a href="github.html" class="hvr-sweep-to-bottom"><i class="fa-brands fa-github" aria-hidden="true"></i><span>GitHub</span></a>
+                                <a href="github.html" class="hvr-sweep-to-bottom"><i class="fa fa-github" aria-hidden="true"></i><span>GitHub</span></a>
                             </li>
                             <li class="col-6 col-sm-3 list-inline-item ui-menu-color-download menuitem">
                                 <a href="#" class="hvr-sweep-to-bottom"><i class="fa fa-download" aria-hidden="true"></i><span> Download CV</span></a>
@@ -51,59 +54,22 @@
         </div>
     </header>
     <section class="container-fluid">
-        <div class="row">
+        <div class="row bg-color-contact">
             <div class="col-md-4 bg-color-conferences section-column">
-                <div class="row">
-                    <div class="col-12">
-                        <h3 class="section-heading">
-                            Conferences attended
-                        </h3>
-                    </div>
                 </div>
-                <div id="map"></div>
-
-            </div>
             
             <div class="col-md-8 bg-color-three-reasons section-column">
                     <div class="row">
                         <div class="col">
-                            <h3 class="section-heading">About me</h3>
+                            <h3 class="contact-heading text-center">View my GitHub projects(annekammenhed)!</h3>
+                            <h5 class="uppercase text-center">(You can also search other profiles.)</h5>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col-10 offset-1 offset-sm-0 col-sm-4 col-md-6">
-                            <div class="row">
-                                <div class="col-2">
-                                    <i class="three-reasons-icon fa fa-question" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-10">
-                                    <h4 class="three-reasons-heading">What do I do?</h4>
-                                    <p>här berättar jag tre anledningar till varför man ska anställa mig..</p>
-                                </div>
-                            </div> 
-                        </div>
-                        <div class="col-10 offset-1 offset-sm-0 col-sm-4 col-md-6">
-                            <div class="row">
-                                <div class="col-2">
-                                    <i class="three-reasons-icon fa fa-thumbs-up" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-10">
-                                    <h4 class="three-reasons-heading">How I do it?</h4>
-                                    <p>här berättar jag om hur jag arbetar ..</p>
-                                </div>
-                            </div> 
-                        </div>
-                        <div class="col-10 offset-1 offset-sm-0 col-sm-4 col-md-6">
-                            <div class="row">
-                                <div class="col-2">
-                                    <i class="three-reasons-icon fa fa-bolt" aria-hidden="true"></i>
-                                </div>
-                                <div class="col-10">
-                                    <h4 class="three-reasons-heading">Why hire me?</h4>
-                                    <p>här skriver jag om vilka fördelar man kan ha med att ha en fin hemsida eller system för att hantera information..</p>
-                                </div>
-                            </div> 
-                        </div>
+                    
+                    <div class="center-form">
+                        <input type="text" id="gh-username" value="Write username here" oninput="fetchGitHubInformation()" />
+                        <div id="gh-user-data"></div>
+                        <div id="gh-repo-data"></div>
                     </div>             
             </div>
         </div>
@@ -134,37 +100,5 @@
             </div>
         </div>
     </footer>
-    <script>
-        function initMap() {
-            var map = new google.maps.Map(document.getElementById("map"), {
-                zoom:3,
-                center: {
-                    lat: 55.422102,
-                    lng: 13.113556
-                }
-            });
-
-        var labels = "ABCDEFGHILJKLMNOPQRSTUVXYZ";  
-          
-        var locations = [
-            {lat: 56.340010, lng: 16.370010},
-            {lat: 55.685734, lng: 13.359563},        
-            {lat: 55.664816, lng: 13.347556}
-        ];
-
-        var markers = locations.map(function(location, i) {
-            return new google.maps.Marker({
-                position: location,
-                label: labels[i % labels.length]
-            });
-        });
-
-        
-    }
-    </script>
-
-    <script src="https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDnTguQDjT_LCP57kzqbdi7PMrMzpobshc&callback=initMap&v=weekly" defer></script>
-</body>
-
+  </body>
 </html>
